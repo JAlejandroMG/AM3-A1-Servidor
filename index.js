@@ -1,13 +1,13 @@
 const http = require('http');
-const morgan = require('morgan');
 const fs = require('fs');
 
-const logger = morgan('tiny');
 
 http.createServer((request, response) => {
    let req = request.url;
    response.setHeader("Content-Type", "text/html; charset=utf-8");
    const notFound = "<h1>404</h1>";
+
+   console.log(request);
 
    const webPage = (page) => {
       fs.readFile(page, (error, content) => {
@@ -30,6 +30,7 @@ http.createServer((request, response) => {
          break;
       case "/contacto": webPage("./contact.html");
          break;
+      case "/favicon.ico": webPage("./favicon.ico")
       default: webPage("./404.html");
    }
 }).listen(8080);
