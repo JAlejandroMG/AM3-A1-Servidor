@@ -1,0 +1,20 @@
+{
+  "name": "primer-servidor",
+  "version": "1.0.0",
+  "description": "Primer servidor con Node",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "filesystem",
+    "download"
+  ],
+  "author": "JAlejandroMG",
+  "license": "ISC",
+  "dependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.6"
+  }
+}
