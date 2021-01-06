@@ -22,16 +22,25 @@ http.createServer((request, response) => {
    };
 
    switch (req) {
-      case "/": webPage("./index.html");
+      case "/":
+         webPage("./index.html");
          break;
-      case "/nosotros": webPage("./about.html");
+      case "/nosotros":
+         webPage("./about.html");
          break;
-      case "/proyectos": webPage("./projects.html");
+      case "/proyectos":
+         webPage("./projects.html");
          break;
-      case "/contacto": webPage("./contact.html");
+      case "/contacto":
+         webPage("./contact.html");
          break;
-      case "/favicon.ico": webPage("./favicon.ico")
-      default: webPage("./404.html");
+      case "/favicon.ico":
+         response.setHeader("Content-Type", "image/x-icon");
+         webPage("./favicon.ico")
+      default: 
+         response.statusCode = 404;
+         webPage("./404.html");
+         break;
    }
 }).listen(8080);
 
